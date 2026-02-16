@@ -54,7 +54,8 @@ document.getElementById('appointmentForm').addEventListener('submit', function(e
     }
     
     // Create WhatsApp message
-   const message = `Hello Dr. Abosahma, I would like to book an appointment.
+   
+const message = `Hello Dr. Abosahma, I would like to book an appointment.
 
 Name: ${name}
 Contact: ${contact}
@@ -63,22 +64,18 @@ Service: ${service}
 Preferred Date: ${date}
 Preferred Time: ${time}`;
 
+// Correct WhatsApp number (India +91)
 const whatsappURL = `https://wa.me/919044039661?text=${encodeURIComponent(message)}`;
 
+// Open WhatsApp
 window.open(whatsappURL, '_blank');
 
-    
-    // WhatsApp API URL (using free URL API)
-    const whatsappURL = `https://wa.me/15551234567?text=${message}`;
-    
-    // Open WhatsApp in a new tab
-    window.open(whatsappURL, '_blank');
-    
-    // Show confirmation message
-    alert('Appointment details sent via WhatsApp! Dr. Smith will confirm your appointment shortly.');
-    
-    // Reset form
-    this.reset();
+// Show confirmation message
+alert('Appointment details sent via WhatsApp! Dr. Abosahma will confirm your appointment shortly.');
+
+// Reset form
+this.reset();
+
 });
 
 // Set min date for appointment booking to today
