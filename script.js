@@ -54,7 +54,19 @@ document.getElementById('appointmentForm').addEventListener('submit', function(e
     }
     
     // Create WhatsApp message
-    const message = `Hello Dr. Smith, I would like to book an appointment with you.%0A%0AName: ${name}%0AContact: ${contact}%0AEmail: ${email}%0AService: ${service}%0APreferred Date: ${date}%0APreferred Time: ${time}`;
+   const message = `Hello Dr. Abosahma, I would like to book an appointment.
+
+Name: ${name}
+Contact: ${contact}
+Email: ${email}
+Service: ${service}
+Preferred Date: ${date}
+Preferred Time: ${time}`;
+
+const whatsappURL = `https://wa.me/919044039661?text=${encodeURIComponent(message)}`;
+
+window.open(whatsappURL, '_blank');
+
     
     // WhatsApp API URL (using free URL API)
     const whatsappURL = `https://wa.me/15551234567?text=${message}`;
@@ -163,4 +175,5 @@ document.querySelectorAll('.portfolio-item').forEach(item => {
         const overlay = this.querySelector('.portfolio-overlay');
         overlay.style.transform = 'translateY(100px)';
     });
+
 });
